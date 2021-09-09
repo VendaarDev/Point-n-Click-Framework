@@ -6,4 +6,5 @@ Unity Version 2018 or higher
 TextMeshPro
 
 
-THIS IS A WORK IN PROGRESS AND NOT FUNCTIONAL
+THIS IS A WORK IN PROGRESS
+You can load it up in Unity 2018 or later with no issue and play around with it but it is not finished
