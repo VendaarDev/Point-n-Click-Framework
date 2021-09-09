@@ -475,9 +475,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: aeecc862df3650d4d90522a54b9e2859, type: 2}
   giveItem: 0
-  yesActions: []
+  amount: 0
+  yesActions:
+  - {fileID: 0}
   noActions: []
-  itemId: 1
+  itemId: 0
 --- !u!4 &526595405
 Transform:
   m_ObjectHideFlags: 0
@@ -486,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526595403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 529.23694, y: 60.35135, z: -35.129604}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
