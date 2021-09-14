@@ -11,11 +11,15 @@ public class PlayerScript : MonoBehaviour
   private bool turning;
   private Quaternion targetRot;
 
+  private PlayerAnimation playerAnim = new PlayerAnimation();
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+        playerAnim.Init(GetComponentInChildren<Animator>());
     }
 
     // Update is called once per frame
@@ -28,6 +32,8 @@ public class PlayerScript : MonoBehaviour
       {
            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
       }
+
+      playerAnim.UpdateAnimation(agent.velocity.sqrMagnitude);
     }
 
     void OnClick()
