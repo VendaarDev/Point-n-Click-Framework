@@ -23,13 +23,33 @@ public class AnimateActionEditor : Editor
         }
 
         //draw anim inspector
+        for (int i = 0; i < anims.arraySize; i++)
+        {
+             DrawAnimsInspector(anims.GetArrayElementAtIndex(i), i);
+        }
 
+        EditorExtensions.DrawActionsArray(actions, "Actions Chaining:");
 
         serializedObject.ApplyModifiedProperties();
    }
 
    void DrawAnimsInspector(SerializedProperty entry, int id)
    {
+        GUILayout.BeginVertical("box");
 
+        GUILayout.BeginHorizontal();
+
+        EditorGUILayout.PropertyField(entry.FindPropertyRelative("triggerName"), new GUIContent("Trigger Name:"));
+
+        if (GUILayout.Button("X", GUILayout.Width(20f)))
+        {
+             anims.DeleteArrayElementAtIndex(id);
+             return;
+        }
+        GUILayout.EndHorizontal();
+
+        EditorGUILayout.PropertyField(entry.FindPropertyRelative("invokeDelay"), new GUIContent("Delay (in sec):"));
+
+        GUILayout.EndVertical();
    }
 }
