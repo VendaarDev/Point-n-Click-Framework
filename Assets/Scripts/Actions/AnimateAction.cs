@@ -36,8 +36,8 @@ public class AnimateAction : Actions
               animator.SetTrigger(anims[i].HashID);
 
              i++;
-
-             yield return null;
+             yield return new WaitForEndOfFrame();
+             yield return new WaitForSeconds(animator.GetNextAnimatorStateInfo(0).length); //0 because base layer of animator is index 0
          }
 
          for (int j = 0; j < actions.Count; j++)
